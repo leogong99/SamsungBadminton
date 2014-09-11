@@ -1,0 +1,45 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="user in users">
+        <strong>{{user.name}}</strong><br>
+        <span class="text-muted">{{user.email}}</span>
+        <a ng-click="deleteUser(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <p>The delete events api routes are restricted to users with the 'admin' role.</p>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="event in awesomeThings">
+        <strong>{{event.date | date:'fullDate'}} {{event.time}}</strong><br>
+        <span class="text-muted">{{event.location}}</span>
+        <a ng-click="deleteThing(event)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="container">
+<form role="form">
+  <h2>Create a new event</h2>
+  <div class="form-group">
+    <label for="newEventDate">Date</label>
+    <input id="newEventDate" type="date" class="form-control" data-date-format="mm/dd/yy" placeholder="Event Date" ng-model="newThing.date">
+  </div>
+  <div class="form-group">
+    <label for="newEventTime">Time</label>
+    <input type="time" id="newEventTime" class="form-control" placeholder="Event Time" ng-model="newThing.time">
+  </div>
+  <div class="form-group">
+    <label for="newEventLocation">Location</label>
+    <input type="text" id="newEventLocation" class="form-control" placeholder="Event Location" ng-model="newThing.location">
+  </div>
+  <button type="submit" ng-click="addThing(newThing)" class="btn btn-default">Submit</button>
+</form>
+</div>
+
+<br/>
