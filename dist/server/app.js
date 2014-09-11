@@ -22,7 +22,6 @@ if (config.seedDB) {
 // Setup server
 var app = express();
 var server = require('http').createServer(app);
-app.use(favicon(__dirname + '/public/favicon.ico'));
 require('./config/express')(app);
 require('./routes')(app);
 
