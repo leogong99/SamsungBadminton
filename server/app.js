@@ -26,7 +26,7 @@ var server = require('http').createServer(app);
 var http = require('http');
 var favicon = require('serve-favicon');
 
-var _favicon = favicon('/public/favicon.ico');
+var _favicon = favicon('dist/public/favicon.ico');
 
 var server = http.createServer(function onRequest(req, res) {
 	_favicon(req, res, function onNext(err) {
